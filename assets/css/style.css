@@ -19,6 +19,12 @@
 .s-between{
     justify-content: space-between;
 }
+.s-around{
+    justify-content: space-around;
+}
+.s-evenly{
+    justify-content: space-evenly;
+}
 .p-absolute{
     position: absolute;
 }
@@ -30,6 +36,9 @@
 }
 .space-sm{
     width: 30px;
+}
+.space-sm-y{
+    height: 30px;
 }
 
 /* Header */
@@ -93,4 +102,28 @@ nav img{
 
 .background-blue{
     background-color: var(--azul-claro);
+}
+
+/* Footer */
+
+.oval{
+    height: 100px;
+    background-color: var(--branco);
+    border-radius: 50% 50% 0% 0%;
+}
+.texto-invertido {
+    direction: rtl;
+    text-align: justify;
+}
+.icon-footer{
+    height: 50px;
+}
+.padding-left-footer{
+    padding-left: 10px;
+}
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: large;
 }
