@@ -4,48 +4,93 @@
     text-decoration: none;
 }
 
+/* Cores */
+:root{
+    --azul-escuro: #2473D9;
+    --azul-claro: #EFFAFD;
+    --preto: #000000;
+    --branco: #FFFFFF;
+}
+
 /* Funções Básicas */
 .d-flex{
     display: flex;
 }
 .s-between{
-    display: flex;
     justify-content: space-between;
 }
 .p-absolute{
     position: absolute;
 }
+.p-relative{
+    position: relative;
+}
 .center-y{
     align-items: center;
 }
+.space-sm{
+    width: 30px;
+}
+
 /* Header */
 
-header{
+.header {
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
+
+header > div {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
 input {
     background: url('../img/lupa.png') no-repeat left center;
-    background-size: 20px;
-    padding-left: 25px;
+    background-size: 45px;
+    padding-left: 45px;
     padding-right: 35px;
-    height: 30px;
-    width: 200px;
-    border-radius: 12px;
+    height: 35px;
+    width: 550px;
+    border-radius: 15px;
+    border: 2px solid var(--preto);
 }
+
 #avancada {
     position: absolute;
-    right: 5px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     background: url('../img/avancadas.png') no-repeat center;
     background-size: contain;
     cursor: pointer;
 }
-
+nav img{
+    height: 50px;
+}
+.divisor-line{
+    height: 2px;
+    background-color: var(--azul-escuro);
+    box-shadow: 0 10px 3px -2px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+.divisor-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    filter: blur(3px);
+}
 /* Main  */
 
 .background-blue{
-    background-color: #EFFAFD;
+    background-color: var(--azul-claro);
 }
