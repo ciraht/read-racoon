@@ -10,6 +10,7 @@
     --azul-claro: #EFFAFD;
     --preto: #000000;
     --branco: #FFFFFF;
+    --roxo: #7B00FF;
 }
 
 /* Fontes */
@@ -56,6 +57,9 @@
 .center-y{
     align-items: center;
 }
+.center-x{
+    justify-content: center;
+}
 .space-sm{
     width: 30px;
 }
@@ -71,7 +75,15 @@
 .text-decoration-none{
     text-decoration: none;
 }
-
+.m-top{
+    margin-top: 20px;
+}
+.m-right{
+    margin-right: 20px;
+}
+.g-sm{
+    gap: 15px;
+}
 /* Header */
 
 .header {
@@ -204,7 +216,7 @@ nav img{
     transform: scale(0.8);
   }
   
-/* Main  */
+/* Main  Index*/
 
 .background-blue{
     background-color: var(--azul-claro);
@@ -385,6 +397,7 @@ nav img{
         width: 2px;
     }
     .border-book2 img{
+        border-radius: 15px;
         height: 245px;
     }
     .border-book2{
@@ -407,3 +420,287 @@ nav img{
         font-size: 12px;
     }
   }
+
+/* Botão add */
+
+
+  
+.circle {
+    display: block;
+    position: relative;
+    padding: 0;
+    z-index: 98;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: #3F51B5;
+    transition: 0.2s;
+    text-align: center;
+  }
+  
+  .circle:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .circle:hover {
+    cursor: pointer;
+    background-color: #606fc7;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .circle .svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+    transform: rotate(180deg);
+  }
+  
+
+  .hidden-trigger {
+    display: none;
+  }
+  
+  .hidden-trigger:checked ~ .circle {
+    transform: scale(0.9);
+    cursor: pointer;
+    background-color: #606fc7;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .hidden-trigger:checked ~ .circle .svg {
+    transform: rotate(45deg);
+  }
+  .wrapper{
+    height: 275px;
+    display: flex;
+    align-items: center;
+    width: 100px !important;
+  }
+  /* rating */
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    --stroke: #666;
+    --fill: #ffc73a;
+  }
+  
+  .rating input {
+    appearance: unset;
+  }
+  
+  .rating label {
+    cursor: pointer;
+  }
+  
+  .rating svg {
+    width: 2rem;
+    height: 2rem;
+    overflow: visible;
+    fill: transparent;
+    stroke: var(--stroke);
+    stroke-linejoin: bevel;
+    stroke-dasharray: 12;
+    animation: idle 4s linear infinite;
+    transition: stroke 0.2s, fill 0.5s;
+  }
+  
+  @keyframes idle {
+    from {
+      stroke-dashoffset: 24;
+    }
+  }
+  
+  .rating label:hover svg {
+    stroke: var(--fill);
+  }
+  
+  .rating input:checked ~ label svg {
+    transition: 0s;
+    animation: idle 4s linear infinite, yippee 0.75s backwards;
+    fill: var(--fill);
+    stroke: var(--fill);
+    stroke-opacity: 0;
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+  
+  @keyframes yippee {
+    0% {
+      transform: scale(1);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30% {
+      transform: scale(0);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30.1% {
+      stroke: var(--fill);
+      stroke-dasharray: 0;
+      stroke-linejoin: miter;
+      stroke-width: 8px;
+    }
+  
+    60% {
+      transform: scale(1.2);
+      fill: var(--fill);
+    }
+  }
+/* Main Livros */
+.border-book3{
+    position: relative;
+    width: 390px;
+    height: 575px;
+    border: double 5px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, #2473D9, #7B00FF);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-top: 20px;
+}
+.border-book3 img{
+    border-radius: 15px;
+    height: 565px;
+    width: 380px;
+}
+.tag{
+    background-color: var(--azul-escuro);
+    border-radius: 15px;
+    width: 75px;
+    text-align: center;
+    color: var(--branco);
+}
+p{
+    margin-bottom: 0px !important;
+}
+.big-size{
+    font-size: 50px !important;
+}
+.size-medium{
+    font-size: 20px;
+}
+.width-desc{
+    word-wrap: break-word; /* Quebra palavras muito longas */
+    overflow-wrap: break-word; /* Garante a quebra quando necessário */
+    white-space: normal; /* Permite a quebra de linha */
+    max-width: 468px; /* Impede que o texto ultrapasse o container */
+}
+.g-30{
+    gap: 30px;
+}
+/* From Uiverse.io by cssbuttons-io */ 
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+   }
+   
+   button.learn-more {
+    width: 14rem;
+    height: auto;
+   }
+   
+   button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: var(--azul-escuro);
+    border-radius: 1.625rem;
+   }
+   
+   button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+   }
+   
+   button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+   }
+   
+   button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+   }
+   
+   button:hover .circle {
+    width: 100%;
+   }
+   
+   button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+   }
+   
+   button:hover .button-text {
+    color: #fff;
+    z-index: 99;
+   }
+   .purple {
+    background: var(--roxo) !important;
+   }

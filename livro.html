@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- adding bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- adding owl.carousel.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- adding owl.theme.default.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Read Racoon</title>
+</head>
+<body>
+    <header>
+        <div class="d-flex s-between center-y header">
+            <a href="index.html"><img src="assets/img/LIBRIS.png" alt="LIBRIS" class="logo"></a>
+            <form action="/search">
+                <div class="p-relative">
+                    <input type="text" placeholder="Pesquisar...">
+                    <span id=avancada></span>
+                </div>
+            </form>
+            <div>
+                <nav class="d-flex">
+                    <button class="button">
+                        <svg viewBox="0 0 448 512" class="bell"><path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path></svg>
+                     </button>
+                    <div class="space-sm"></div>
+                    <a href=""><img src="assets/img/user.png" alt="Usuário"></a>
+                </nav>
+            </div>
+        </div>
+        <div class="divisor-line"></div>
+    </header>
+    <div class="fake-header"></div>
+    <main class="background-blue">
+        <section class="d-flex center-x size-medium g-30">
+            <div class="border-book3">
+                <img src="assets/img/teste.webp" alt="">
+            </div>
+            <div>
+                <div class="d-flex s-between center-y m-top">
+                    <p class="montserrat-alternates-semibold big-size"   >Livro 1</p>
+                    <div class="d-flex center-y">
+                        <div class="rating">
+                            <input type="radio" id="star-5" name="star-radio" value="5" onclick="toggleRating(event)">
+                            <label for="star-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
+                                </svg>
+                            </label>
+                            <input type="radio" id="star-4" name="star-radio" value="4" onclick="toggleRating(event)">
+                            <label for="star-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
+                                </svg>
+                            </label>
+                            <input type="radio" id="star-3" name="star-radio" value="3" onclick="toggleRating(event)">
+                            <label for="star-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
+                                </svg>
+                            </label>
+                            <input type="radio" id="star-2" name="star-radio" value="2" onclick="toggleRating(event)">
+                            <label for="star-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
+                                </svg>
+                            </label>
+                            <input type="radio" id="star-1" name="star-radio" value="1" onclick="toggleRating(event)">
+                            <label for="star-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
+                                </svg>
+                            </label>
+                        </div>    
+                        <div>
+                            <p class="montserrat-alternates-semibold">0.0</p>
+                        </div>  
+                    </div>
+
+                </div>
+                <div class="d-flex s-between">
+                    <p class="montserrat-alternates-semibold">Autor 1</p>
+                    <p class="montserrat-alternates-semibold">0000</p>
+                    <p class="montserrat-alternates-semibold">123-4-56-789012-3</p>
+                </div>
+                <div class="d-flex s-between">
+                    <p class="montserrat-alternates-semibold">Pt-BR</p>
+                    <p class="montserrat-alternates-semibold">Categoria</p>
+                    <p class="montserrat-alternates-semibold">Estoque Disponível: 0</p>
+                </div>
+                <div>
+                    <div class="d-flex m-top">
+                        <p class="tag montserrat-alternates-semibold m-right">Tag 1</p>
+                        <p class="tag montserrat-alternates-semibold m-right">Tag 2</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="montserrat-alternates-semibold m-top width-desc">Breve descrição sobre o seu livro aqui. feb hfafhs hfioshiofashifhsihaoifsai fhsafhashfsaiofisaohfisofioasifoisoafiosaiofshfosahfosiohfsiaohfisoahfoisahfiosahfio sahfiosahfishfohasio</p>
+                </div>
+                <div class="d-flex g-sm m-top">
+                    <button class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text montserrat-alternates-semibold">Emprestar</span>
+                      </button>
+                      
+                      <button class="learn-more">
+                        <span class="circle  purple " aria-hidden="true">
+                        <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text montserrat-alternates-semibold">Reservar</span>
+                      </button>
+                      
+                </div>
+            </div>
+        </section>
+        <div class="space-med-y"></div>
+        <section>
+            <p class="montserrat-alternates-semibold size-titles">Recomendados</p>
+            <div class="owl-carousel change">
+                <div>
+                    <div class="border-book">
+                        <a href="">
+                            <div>
+                                <img src="assets/img/o-livro-da-capa-verde.jpg" alt="">
+                            </div>    
+                        </a>
+                    </div>
+                    <a href="" class="text-decoration-none"><p class="montserrat-alternates-semibold book-title-formatation">Livro 1</p></a>
+                </div>
+                <div>
+                    <div class="border-book">
+                        <a href="" >
+                            <div>
+                                <img src="assets/img/alem-da-capa.jpg" alt="">
+                            </div>    
+                        </a>
+                    </div>
+                    <a href="" class="text-decoration-none"><p class="montserrat-alternates-semibold book-title-formatation">Livro 2</p></a>
+                </div>
+                <div>
+                    <div class="border-book">
+                        <a href="" >
+                            <div>
+                                <img src="assets/img/teste.webp" alt="">
+                            </div>    
+                        </a>
+                    </div>
+                    <a href="" class="text-decoration-none"><p class="montserrat-alternates-semibold book-title-formatation">Livro 2</p></a>
+                </div>
+        </section>
+        <div class="oval"></div>
+    </main>
+    <footer class="inter">
+        <div class="d-flex s-around">
+        <section class="d-flex-column">
+            <div class="d-flex center-y">
+                <img src="assets/img/phone.png" alt="Icone telefone" class="icon-footer">
+                <p class="padding-left-footer">+55 (99) 99999-9999</p>
+            </div>
+            <div class="d-flex center-y">
+                <img src="assets/img/local.png" alt="Icone local" class="icon-footer">
+                <a target="_blank" href="https://www.google.com.br/maps/place/LIBRIS+-+FIC/@-16.6039392,-49.265832,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef34af5367885:0x5198a5129421b439!8m2!3d-16.6039392!4d-49.2632571!16s%2Fg%2F11fjqk1xlh?hl=pt-PT&entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D" class="padding-left-footer"><p>Rua Rua, 123 - Cidade/ESTADO</p></a>
+            </div>
+        </section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <section class="texto-invertido d-flex-column">
+            <img src="assets/img/LIBRIS.png" alt="LIBRIS" class="logo2">
+            <p>Libris@</p>
+            <p>Todos os Direitos Reservados©</p>
+        </section>
+        </div>
+        <div class="space-sm-y"></div>
+        <!-- adding jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <!-- adding bootstrap.bundle.min.js CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <!-- adding owl.carousel.js CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="assets/js/script.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop: false,
+                nav: true,
+                dots: false,
+                autoplay: false,
+                stagePadding: 50,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:1,
+                        nav:false
+                    },
+                    600:{
+                        items:2,
+                        nav:false
+                    },
+                    900:{
+                        items:3,
+                        nav:true,
+                    },
+                    1200:{
+                        items:4,
+                        nav:true,
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        let lastChecked = null;
+      
+        function toggleRating(event) {
+          if (lastChecked === event.target) {
+            event.target.checked = false; // Desmarca se clicar na mesma estrela
+            lastChecked = null;
+          } else {
+            lastChecked = event.target;
+          }
+        }
+      </script>
+    </footer>
+</body>
+</html>
