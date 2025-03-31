@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #EAF4FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+.logo {
+  width: 130px;
+}
+
+.login-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+  border: 2px solid #0056D2;
+  margin-top: 100px;
+}
+
+.login-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+h2 {
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+/* Estilização do grupo de inputs */
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 1.3em auto;
+  max-width: 250px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputGroup input {
+  font-size: 100%;
+  padding: 0.8em;
+  padding-right: 40px; /* Espaço para o ícone */
+  outline: none;
+  border: 2px solid #0056D2;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Estilização da label */
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.4em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+  background: #fffefe;
+}
+
+/* Quando o input estiver focado ou válido, a label encolhe */
+.inputGroup input:focus ~ label,
+.inputGroup input:valid ~ label {
+  top: 0;
+  left: 15px;
+  font-size: 12px;
+  color: #0056D2;
+}
+
+/* Botão de login */
+button {
+  width: 80%;
+  padding: 10px;
+  background-color: #0056D2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0041a8;
+}
+
+.register {
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+/* Estilização e posicionamento do ícone de olho */
+.eye-container {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.eye-container svg {
+  width: 20px;
+  height: 20px;
+  fill: #0056D2;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Por padrão, exibe o ícone do olho e esconde o de olho riscado */
+.eye-container .eye-slash {
+  display: none;
+}
+
+/* Ao marcar o checkbox de toggle, inverte a exibição dos ícones */
+#togglePassword:checked ~ .eye-container .eye {
+  display: none;
+}
+
+#togglePassword:checked ~ .eye-container .eye-slash {
+  display: block;
+}
+
+/* Animação para o ícone */
+@keyframes keyframes-fill {
+0% {
+  transform: scale(0);
+  opacity: 0;
+}
+50% {
+  transform: scale(1.2);
+}
+100% {
+  transform: scale(1);
+  opacity: 1;
+}
+}
+
+.eye-container svg {
+  animation: keyframes-fill 0.5s;
+}
