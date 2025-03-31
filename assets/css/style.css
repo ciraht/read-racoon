@@ -87,6 +87,9 @@
 .g-sm{
     gap: 15px;
 }
+.pointer{
+  cursor: pointer;
+}
 /* Header */
 
 .header {
@@ -920,3 +923,16 @@ textarea.input {
   background-color: var(--azul-escuro);
   border-radius: 0 8px 8px 0;
 }
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+.content {
+  margin-left: 240px;
+  padding: 20px;
+  min-height: 100vh;
+}
+
