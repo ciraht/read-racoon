@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="assets/css/cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <label for="file-upload" class="image-upload">
+            <input type="file" id="file-upload" accept="image/*" hidden>
+            <img src="https://via.placeholder.com/100" alt="Upload de Imagem" id="preview">
+        </label>
+        <h2>CADASTRO</h2>
+        <form>
+            <div class="inputGroup">
+                <input type="text" required="" autocomplete="off">
+                <label for="name">Nome do Usuário</label>
+            </div>
+            <div class="inputGroup">
+                <input type="text" required="" autocomplete="off">
+                <label for="name">E-mail:</label>
+            </div>
+            <div class="inputGroup">
+                <input type="text" required="" autocomplete="off">
+                <label for="name">Endereço:</label>
+            </div>
+            <div class="inputGroup">
+                <input type="text" required="" autocomplete="off">
+                <label for="name">Telefone:</label>
+            </div>
+            <div class="inputGroup">
+                <input type="text" required="" autocomplete="off">
+                <label for="name">Senha:</label>
+            </div>
+            <div class="inputGroup">
+                <input type="text" required="" autocomplete="off">
+                <label for="name">Confirmar Senha:</label>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <a href="login.html" class="register">Possuo uma conta</a>
+    </div>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('preview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
