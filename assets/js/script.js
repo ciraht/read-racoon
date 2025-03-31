@@ -16,3 +16,21 @@ window.addEventListener("scroll", () => {
     lastScroll = currentScroll;
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".nav-lateral a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            // Se o link for "Sair", permite a navegação normalmente
+            if (this.dataset.page === "sair") return;
+
+            event.preventDefault(); // Impede a navegação para as outras abas
+
+            // Remove a classe 'active' de todos os links
+            links.forEach(l => l.classList.remove("active"));
+
+            // Adiciona a classe 'active' ao link clicado
+            this.classList.add("active");
+        });
+    });
+});

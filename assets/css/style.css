@@ -69,6 +69,9 @@
 .space-med-y{
     height: 50px;
 }
+.space-xxbig-y{
+  height: 155px;
+}
 .f-wrap{
     flex-wrap: wrap;
 }
@@ -398,11 +401,11 @@ nav img{
     }
     .border-book2 img{
         border-radius: 15px;
-        height: 245px;
+        height: 266px;
     }
     .border-book2{
-        height: 255px;
-        width: 190px;
+        height: 275px;
+        width: 180px;
     }
     .rank{
         top: 50px;
@@ -585,7 +588,7 @@ nav img{
 }
 .border-book3 img{
     border-radius: 15px;
-    height: 565px;
+    height: 566px;
     width: 380px;
 }
 .tag{
@@ -716,6 +719,13 @@ button {
 .dropzone .dz-message p {
   font-family: "Montserrat Alternates", sans-serif;
 }
+.dropzone .dz-message {
+  display: flex;
+  align-items: center;  /* Alinha verticalmente */
+  justify-content: center;  /* Alinha horizontalmente */
+  height: 100%;
+  margin: 0 !important;
+}
 
 .border-book4{
   position: relative;
@@ -818,7 +828,7 @@ textarea.input {
   font-size: 17px;
   border-radius: 500px;
   overflow: hidden;
-  background: #66ff66;
+  background: var(--azul-escuro);
   color: ghostwhite;
  }
  
@@ -829,9 +839,7 @@ textarea.input {
   
  }
  
- .salvar:hover span {
-  color: black;
- }
+
  
  .salvar::before,
  .salvar::after {
@@ -857,5 +865,58 @@ textarea.input {
  }
  
  .cancelar{
-  background: red;
+  background: var(--roxo);
  }
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding-top: 80px; /* Ajuste para evitar sobreposição com o cabeçalho */
+  border-radius: 12px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+}
+
+/* Ajuste para empurrar os itens da navegação para baixo */
+.nav-lateral ul {
+  list-style: none;
+  padding-top: 20px; /* Adicionando espaçamento no topo da lista */
+  
+}
+
+
+.nav-lateral a {
+  display: block;
+  padding: 25px 25px;
+  color: #2c3e50;
+  text-decoration: none;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Efeito de hover e item ativo */
+.nav-lateral a:hover,
+.nav-lateral a.active {
+  background-color: white;
+  transform: scale(1.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra na lateral direita e embaixo */
+} 
+
+/* Botão "Sair" fixado na parte inferior */
+.nav-lateral .highlight {
+  position: absolute;
+  width: 100%;
+}
+
+.nav-lateral .highlight a {
+  color: var(--branco);
+  background-color: var(--azul-escuro);
+  border-radius: 0 8px 8px 0;
+}
