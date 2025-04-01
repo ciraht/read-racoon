@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (activePage) {
             activePage.classList.add("active");
         }
+
+        window.scrollTo(0, 0);
     }
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -57,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
     closeModal.addEventListener("click", function () {
         modal.style.display = "none"; // Esconde o modal
         activatePage("inicio"); // Leva para a página inicial
+        localStorage.setItem("activePage", "inicio");
+        window.location.href = "config.html"
     });
 
     confirmPasswordBtn.addEventListener("click", function () {
@@ -76,5 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Adiciona a classe 'active' na página desejada
         document.getElementById(pageId)?.classList.add("active");
+
+        window.scrollTo(0, 0);
     }
 });

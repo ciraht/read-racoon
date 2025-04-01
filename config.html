@@ -133,17 +133,20 @@
         });
       
         document.getElementById('save-btn').addEventListener('click', function () {
-          document.querySelectorAll('.input-edit').forEach(function (input) {
-            let p = document.createElement('p');
-            p.innerText = input.value;
-            p.classList.add('editable');
-            p.dataset.key = input.dataset.key;
-            input.replaceWith(p);
-          });
-      
-          document.getElementById('edit-btn').style.display = 'inline-block';
-          document.getElementById('save-btn').style.display = 'none';
+        document.querySelectorAll('.input-edit').forEach(function (input) {
+            if (input.closest('.profile-container')) {
+                let p = document.createElement('p');
+                p.innerText = input.value;
+                p.classList.add('editable');
+                p.dataset.key = input.dataset.key;
+                input.replaceWith(p);
+            }
         });
+
+        document.getElementById('edit-btn').style.display = 'inline-block';
+        document.getElementById('save-btn').style.display = 'none';
+    });
+
       </script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </body>
