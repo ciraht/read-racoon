@@ -48,10 +48,67 @@
                 </ul>
             </nav>
         </aside>
-        <section class="content">
+        <section class="content montserrat-alternates-semibold">
             <div id="inicio" class="page active">Bem-vindo à página inicial!</div>
-            <div id="informacoes" class="page">Aqui ficam as Informações Pessoais.</div>
-            <div id="seguranca" class="page">Configurações de Segurança.</div>
+            <div id="informacoes" class="page">    
+                <h2>Informações Pessoais</h2>
+                <div class="profile-container">
+                  <img src="assets/img/user.png" alt="" class="profile-pic">
+                  <div class="info">
+                    <label>Nome:</label>
+                    <p class="editable" data-key="nome">João da Silva</p>
+              
+                    <label>Email:</label>
+                    <p class="editable" data-key="email">joao@email.com</p>
+              
+                    <label>Endereço:</label>
+                    <p class="editable" data-key="endereco">Rua Exemplo, 123 - São Paulo, SP</p>
+              
+                    <label>Telefone:</label>
+                    <p class="editable" data-key="telefone">(11) 98765-4321</p>
+              
+                    <label>Senha:</label>
+                    <p>******** </p>
+                    
+                    <div class="buttons">
+                      <button id="edit-btn" class="btn">Editar</button>
+                      <button id="save-btn" class="btn" style="display: none;">Salvar</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div id="seguranca" class="page">
+                <div id="password-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Digite sua senha atual</h3>
+                        <input type="password" id="current-password" class="input-edit" placeholder="Senha Atual">
+                        <div class="modal-buttons">
+                            <button class="btn btn-save" id="confirm-password">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="security-container">
+                    <h2>Alterar Senha</h2>
+                    <form id="change-password-form">
+                        
+                        <div class="input-group">
+                            <label for="new-password">Nova Senha</label>
+                            <input type="password" id="new-password" class="input-edit" placeholder="Digite a nova senha" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="confirm-password">Confirmar Nova Senha</label>
+                            <input type="password" id="confirm-password" class="input-edit" placeholder="Confirme a nova senha" required>
+                        </div>
+                        
+                        <div class="buttons2">
+                            <button type="submit" class="btn2 btn-save" id="submit-password-change">Alterar Senha</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div id="gerenciar" class="page">Gerenciamento de Livros.</div>
             <div id="minha-lista" class="page">Sua lista de leitura.</div>
             <div id="historico" class="page">Seu histórico de atividades.</div>
@@ -60,6 +117,34 @@
     </main>
     <script src="assets/js/config.js"></script>
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script>
+        document.getElementById('edit-btn').addEventListener('click', function () {
+          document.querySelectorAll('.editable').forEach(function (element) {
+            let input = document.createElement('input');
+            input.type = 'text';
+            input.value = element.innerText;
+            input.dataset.key = element.dataset.key;
+            input.classList.add('input-edit');
+            element.replaceWith(input);
+          });
+      
+          document.getElementById('edit-btn').style.display = 'none';
+          document.getElementById('save-btn').style.display = 'inline-block';
+        });
+      
+        document.getElementById('save-btn').addEventListener('click', function () {
+          document.querySelectorAll('.input-edit').forEach(function (input) {
+            let p = document.createElement('p');
+            p.innerText = input.value;
+            p.classList.add('editable');
+            p.dataset.key = input.dataset.key;
+            input.replaceWith(p);
+          });
+      
+          document.getElementById('edit-btn').style.display = 'inline-block';
+          document.getElementById('save-btn').style.display = 'none';
+        });
+      </script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </body>
 </html>

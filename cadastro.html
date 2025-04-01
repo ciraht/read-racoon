@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="assets/css/cadastro.css">
 </head>
 <body>
+    <header>
+        <a href="index.html"><img src="assets/img/LIBRIS.png" alt="LIBRIS" class="logo"></a>
+    </header>
     <div class="container">
         <label for="file-upload" class="image-upload">
             <input type="file" id="file-upload" accept="image/*" hidden>
@@ -19,7 +22,7 @@
                 <label for="name">Nome do Usuário</label>
             </div>
             <div class="inputGroup">
-                <input type="text" required="" autocomplete="off">
+                <input type="email" required="" autocomplete="off">
                 <label for="name">E-mail:</label>
             </div>
             <div class="inputGroup">
@@ -59,7 +62,8 @@
 
             <button type="submit">Cadastrar</button>
         </form>
-        <a href="login.html" class="register">Possuo uma conta</a>
+        <div class="space-lilsm-y"></div>
+        <a href="login.html" class="register text-decoration-none">Possuo uma conta</a>
     </div>
 
     <script>

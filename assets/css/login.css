@@ -111,6 +111,12 @@ button:hover {
 .register {
   margin-top: 25px;
   font-size: 14px;
+  color: #0056D2;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+.register:hover {
+  color: #0041a8;
 }
 
 /* Estilização e posicionamento do ícone de olho */
@@ -165,4 +171,10 @@ button:hover {
 
 .eye-container svg {
   animation: keyframes-fill 0.5s;
+}
+.text-decoration-none{
+  text-decoration: none;
+}
+.space-lilsm-y{
+  height: 10px;
 }
