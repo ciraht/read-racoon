@@ -35,6 +35,13 @@
     font-weight: 10px;
     font-style: normal;
   }
+.delius-regular {
+    font-family: "Delius", cursive;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--preto);
+  }
+  
 /* Funções Básicas */
 .d-flex{
     display: flex;
@@ -112,6 +119,10 @@ header > div {
     display: flex;
     align-items: center;
     position: relative;
+}
+.logo2{
+  height: 130px;
+  width: 140px;
 }
 .fake-header{
     height: 100px;

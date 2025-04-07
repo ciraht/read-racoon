@@ -10,16 +10,43 @@
     <header>
         <a href="index.html"><img src="assets/img/LIBRIS.png" alt="LIBRIS" class="logo"></a>
     </header>
+
     <div class="login-container">
-        <img src="assets/img/pandavermelho.png" alt="Avatar">
+
+        <img src="assets/img/red-raccoon.png" alt="">
+        <div class="avatar-container center-x">
+            <input type="checkbox" id="togglePassword" hidden>
+              <!-- From Uiverse.io by SnyDeTreves --> 
+<div class="btn-container center-x">
+    <div style="--a: 0;" class="btn-sensor sensor-n"></div>
+    <div style="--a: 45;" class="btn-sensor sensor-ne"></div>
+    <div style="--a: 90;" class="btn-sensor sensor-e"></div>
+    <div style="--a: 135;" class="btn-sensor sensor-se"></div>
+    <div style="--a: 180;" class="btn-sensor sensor-s"></div>
+    <div style="--a: 225;" class="btn-sensor sensor-sw"></div>
+    <div style="--a: 270;" class="btn-sensor sensor-w"></div>
+    <div style="--a: 315;" class="btn-sensor sensor-nw"></div>
+    <button class="btn-button">
+      <div class="btn-lid"></div>
+      <div class="btn-pupil"></div>
+    </button>
+    <button class="btn-button">
+      <div class="btn-lid"></div>
+      <div class="btn-pupil"></div>
+    </button>
+  </div>
+  
+            
+          </div>
+          
         <h2>LOGIN</h2>
         <form>
             <div class="inputGroup">
-                <input type="text" required autocomplete="off">
+                <input type="text" required autocomplete="off" class="z-index-high">
                 <label>E-mail:</label>
             </div>
             <div class="inputGroup">
-                <input type="password" id="senha" required autocomplete="off">
+                <input type="password" id="senha" required autocomplete="off" class="z-index-high">
                 <label>Senha:</label>
                 <input type="checkbox" id="togglePassword" hidden>
                 <div class="eye-container"  onclick="togglePasswordVisibility()">
@@ -32,10 +59,10 @@
                 </div>
             </div>
         
-            <button type="submit">Entrar</button>
+            <button type="submit" class="login-btn z-index-high">Entrar</button>
         </form>
         <div class="space-lilsm-y"></div>
-        <a href="cadastro.html" class="register text-decoration-none">Não possuo uma conta</a>
+        <a href="cadastro.html" class="register text-decoration-none z-index-high">Não possuo uma conta</a>
     </div>
     <script>
         function togglePasswordVisibility() {
